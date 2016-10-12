@@ -11,4 +11,15 @@ class User < ActiveRecord::Base
       new_user.oauth_token_secret = auth_info.credentials.secret
     end
   end
+
+  def all_repos
+    user_git_services = GitHubService.new(self)
+    page = 1
+    repos = {}
+    until repos.count == 0
+      repos += user_git_services.repos(page: page)
+      page += 1
+    end
+    repos
+  end
 end

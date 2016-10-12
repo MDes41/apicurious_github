@@ -58,3 +58,16 @@
 .wrapper {
   width: 80%;
 }
+
+.octocat:hover {
+  background-image: image-url("oct_rev.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.octocat {
+  background-image: image-url("oct_reg.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100px;
+}

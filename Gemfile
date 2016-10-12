@@ -35,8 +35,11 @@ group :development, :test do
   gem 'figaro'
   gem 'rspec-rails', '~> 3.5'
   gem 'omniauth-github'
-  gem 'omniauth-facebook'
-  gem 'omniauth-twitter'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'pry'
+  gem 'simplecov'
+  gem 'factory_girl_rails'
 end
 
 group :development do
