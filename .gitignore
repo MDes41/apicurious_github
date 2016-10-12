@@ -19,4 +19,8 @@
 # Ignore application configuration
 /config/application.yml
 
-.coverage
+# Ignore coverage folder from SimpleCov
+/coverage
+
+# Ignore fixtures cassette folder
+/spec/fixtures/vcr_cassettes

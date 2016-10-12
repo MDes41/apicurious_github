@@ -8,6 +8,11 @@ require 'spec_helper'
 require 'rspec/rails'
 require 'simplecov'
 SimpleCov.start 'rails'
+
+VCR.configure do |config|
+  config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
+  config.hook_into :webmock #or fakeweb
+end
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -67,7 +72,7 @@ def stub_omniauth
   # omniauth will use when a user tries to authenticate:
   OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({
     'credentials' => {
-                      'token' => '12345',
+                      'token' => "12345",
                       'secret' => '6789'
                     },
     'extra' => {

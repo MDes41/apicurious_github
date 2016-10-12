@@ -28,6 +28,11 @@
         null,
         null
       ],
+      "/Users/matt/Turing/3module/projects/apicurious_github/app/models/application_record.rb": [
+        1,
+        1,
+        null
+      ],
       "/Users/matt/Turing/3module/projects/apicurious_github/app/controllers/home_controller.rb": [
         1,
         1,
@@ -108,13 +113,8 @@
         0,
         0,
         0
-      ],
-      "/Users/matt/Turing/3module/projects/apicurious_github/app/models/application_record.rb": [
-        0,
-        0,
-        0
       ]
     },
-    "timestamp": 1476238152
+    "timestamp": 1476295613
   }
 }

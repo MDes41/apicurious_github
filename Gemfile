@@ -35,11 +35,16 @@ group :development, :test do
   gem 'figaro'
   gem 'rspec-rails', '~> 3.5'
   gem 'omniauth-github'
-  gem 'capybara'
-  gem 'launchy'
-  gem 'pry'
+end
+
+group :test do
   gem 'simplecov'
   gem 'factory_girl_rails'
+  gem 'pry'
+  gem 'launchy'
+  gem 'capybara'
+  gem 'vcr'
+  gem 'webmock'
 end
 
 group :development do
