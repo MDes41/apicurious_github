@@ -1,0 +1,18 @@
+<div class="col-md-3">
+  <div class="row profile_img">
+    <image src="<%= current_user.avatar_url %>"></image>
+  </div>
+
+  <div class="row">
+    <h1><%= current_user.name %></h1>
+  </div>
+
+  <div class="row login_hp">
+      <p><%= current_user.login %></p>
+  </div>
+  
+  <div class="row mail_img">
+      <image src='assets/mail'></image><span><%= current_user.email %></span>
+  </div>
+
+</div>

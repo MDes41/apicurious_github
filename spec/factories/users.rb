@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :user do
-    uid                  "5555"
+    uid                  "8398525"
     name                 "Matt D"
     login                "MDes41"
     avatar_url           "https://avatar.com"
@@ -9,7 +9,7 @@ FactoryGirl.define do
     oauth_token_secret   "6789"
 
     factory :user_with_token do
-      uid                  "5555"
+      uid                  "8398525"
       name                 "Matt D"
       login                "MDes41"
       avatar_url           "https://avatar.com"

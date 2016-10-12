@@ -5,7 +5,7 @@ RSpec.describe User, type: :model do
     VCR.use_cassette('Create user model') do
       user = User.from_omniauth(stub_omniauth)
       expect(user.avatar_url).to eq("https://avatar.com")
-      expect(user.uid).to eq("5555")
+      expect(user.uid).to eq("8398525")
       expect(user.name).to eq("Matt D")
       expect(user.login).to eq("MDes41")
       expect(user.email).to eq("MDes41@users.noreply.github.com")

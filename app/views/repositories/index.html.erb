@@ -1,0 +1,31 @@
+<div class="row">
+
+  <%= render 'shared/profile' %>
+
+  <div class="col-md-9">
+    <div class="mini_nav">
+      <table class="table">
+          <thead>
+            <tr>
+              <th><%= link_to "Repositories", repositories_path %></th>
+              <th><%= link_to "Repositories", repositories_path %></th>
+              <th><%= link_to "Repositories", repositories_path %></th>
+            </tr>
+          </thead>
+      </table>
+    </div>
+
+      <!-- <div class="mininav_box">
+        <%= link_to "Repositories", repositories_path %>
+      </div> -->
+
+    <% @repos.each do |repo| %>
+      <div class="row">
+        <div class="repository_row">
+          <h3><%= repo[:name] %></h3>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+</div>

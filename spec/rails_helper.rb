@@ -7,9 +7,14 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'spec_helper'
 require 'rspec/rails'
 require 'simplecov'
-SimpleCov.start 'rails'
+SimpleCov.start 'rails' do
+   add_filter '/app/channels/application_cable'
+   add_filter '/app/jobs/application_job.rb'
+   add_filter '/app/mailers/application_mailer.rb'
+end
 
 VCR.configure do |config|
+  config.allow_http_connections_when_no_cassette = true
   config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
   config.hook_into :webmock #or fakeweb
 end
@@ -59,7 +64,7 @@ RSpec.configure do |config|
   # https://relishapp.com/rspec/rspec-rails/docs
   config.infer_spec_type_from_file_location!
 
-  # Filter lines from Rails gems in backtraces.
+  # Filter lines from Rails gems in backtraces
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
@@ -72,7 +77,7 @@ def stub_omniauth
   # omniauth will use when a user tries to authenticate:
   OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({
     'credentials' => {
-                      'token' => "12345",
+                      'token' => '12345',
                       'secret' => '6789'
                     },
     'extra' => {
@@ -83,5 +88,5 @@ def stub_omniauth
                       'name' => "Matt D"
                       }
                 },
-    'uid' => "5555"})
+    'uid' => "8398525"})
 end
