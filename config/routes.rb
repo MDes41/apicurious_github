@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   resources :repositories, only: [:index]
   get '/repositories/remote', to: 'repositories#remote'
   resources :dashboard, only: [:index]
+  resources :followers, only: [:index]
+  get '/followers/profile', to: 'followers#show'
 end

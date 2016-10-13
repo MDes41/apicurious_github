@@ -7,6 +7,7 @@ class User < ApplicationRecord
       new_user.login              = auth_info.extra.raw_info.login
       new_user.avatar_url         = auth_info.extra.raw_info.avatar_url
       new_user.email              = auth_info.extra.raw_info.email
+      new_user.repos_url          = auth_info.extra.raw_info.repos_url
       new_user.oauth_token        = auth_info.credentials.token
       new_user.oauth_token_secret = auth_info.credentials.secret
     end
@@ -39,8 +40,9 @@ class User < ApplicationRecord
   end
 
   def followers
-    GitHubService.followers(login).map do |user|
+    @followers ||= GitHubService.followers(self).map do |user|
       GitHubUser.new(user)
     end
+    @followers
   end
 end

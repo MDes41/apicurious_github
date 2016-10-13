@@ -104,9 +104,46 @@ body {
   padding-top: 20px;
   padding-bottom: 20px;
   padding-left: 10px;
-  margin-left: 50px;
+  margin-right: 50px;
+  margin-left: 10px;
+  padding-right: 10px;
 }
 
 .mini_nav {
-  margin-left: 50px;
+  margin-left: 20px;
+  margin-right: 50px;
+  width: 100%;
+  .table {
+    border: none;
+  }
+}
+
+.repository_row img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.follower_row {
+  padding-top: 20px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  margin-left: 10px;
+  p {
+    font-size: 18px;
+    font-weight: bold;
+  }
+}
+
+.follower_row_2 {
+  padding-top: 30px;
+  padding-left: 10px;
+  margin-left: 10px;
+  p {
+    font-size: 18px;
+  }
+}
+
+.mini_nav .table th {
+  min-width: 100%;
+  border-bottom: none;
 }
