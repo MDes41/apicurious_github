@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
 
   resources :repositories, only: [:index]
+  get '/repositories/remote', to: 'repositories#remote'
   resources :dashboard, only: [:index]
 end

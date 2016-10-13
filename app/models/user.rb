@@ -13,29 +13,34 @@ class User < ApplicationRecord
   end
 
   def all_repos
-    user_git_services ||= GitHubService.new(self)
     page = 1
     one_page = ['no data']
     repos = []
     until one_page.count == 0
-      one_page = user_git_services.repos(page)
+      one_page = GitHubService.authenticated_user_repos(self, page)
       repos += one_page
       page += 1
     end
-    repos
+    repos.map { |repo| Repo.new(repo) }
   end
 
   def my_repos
     repos = all_repos
     repos.map do |repo|
-      repo if repo[:owner][:id].to_s == uid
+      repo if repo.owner == uid
     end.compact
   end
 
   def my_repos_elsewhere
     repos = all_repos
     repos.map do |repo|
-      repo if repo[:owner][:id].to_s != uid
+      repo if repo.owner != uid
     end.compact
+  end
+
+  def followers
+    GitHubService.followers(login).map do |user|
+      GitHubUser.new(user)
+    end
   end
 end

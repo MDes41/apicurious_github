@@ -1,0 +1,7 @@
+<% @repos.each do |repo| %>
+  <div class="row">
+    <div class="repository_row">
+      <h3><%= link_to repo.name, repo.url %></h3>
+    </div>
+  </div>
+<% end %>

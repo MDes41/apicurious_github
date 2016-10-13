@@ -5,8 +5,7 @@ describe "Repos" do
   it "filters by repos" do
     VCR.use_cassette("first page of repos") do
       user = create(:user_with_token)
-      user_git_services = GitHubService.new(user)
-      repos = user_git_services.repos
+      repos = GitHubService.authenticated_user_repos(user)
       repo = repos.first
       expect(repos.count).to eq(30)
       expect(repo[:name]).to eq('rails_engine')

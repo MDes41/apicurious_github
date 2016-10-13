@@ -6,8 +6,8 @@ RSpec.describe 'Authenticated user' do
       user = create(:user_with_token)
       repos = user.all_repos
       expect(repos.count).to eq(65)
-      expect(repos.first[:name]).to eq('rails_engine')
-      expect(repos.last[:name]).to eq('http_yeah')
+      expect(repos.first.name).to eq('rails_engine')
+      expect(repos.last.name).to eq('http_yeah')
     end
   end
 
@@ -16,8 +16,8 @@ RSpec.describe 'Authenticated user' do
       user = create(:user_with_token)
       repos = user.my_repos
       expect(repos.count).to eq(54)
-      expect(repos.first[:name]).to eq('1module_homework_flow_control')
-      expect(repos.last[:name]).to eq('WP_Repository_Port')
+      expect(repos.first.name).to eq('1module_homework_flow_control')
+      expect(repos.last.name).to eq('WP_Repository_Port')
     end
   end
 
@@ -26,8 +26,8 @@ RSpec.describe 'Authenticated user' do
       user = create(:user_with_token)
       repos = user.my_repos_elsewhere
       expect(repos.count).to eq(11)
-      expect(repos.first[:name]).to eq('rails_engine')
-      expect(repos.last[:name]).to eq('http_yeah')
+      expect(repos.first.name).to eq('rails_engine')
+      expect(repos.last.name).to eq('http_yeah')
     end
   end
 end
