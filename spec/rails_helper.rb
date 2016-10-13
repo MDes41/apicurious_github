@@ -77,7 +77,7 @@ def stub_omniauth
   # omniauth will use when a user tries to authenticate:
   OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({
     'credentials' => {
-                      'token' => '12345',
+                      'token' => ENV['GITHUB_TOKEN'],
                       'secret' => '6789'
                     },
     'extra' => {

@@ -4,7 +4,6 @@ class FollowersController < ApplicationController
   end
 
   def show
-    byebug
-    @follower
+    @git_hub_user = GitHubUser.find(params[:uid]).first
   end
 end

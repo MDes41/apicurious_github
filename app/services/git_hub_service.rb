@@ -21,7 +21,7 @@ class GitHubService
 
   def self.generic_user_repos(user, page = 1)
     response = conn.get do |req|
-      req.url "/users/#{user.login}repos"
+      req.url "/users/#{user.login}/repos"
       req.params[:page] = page
     end
     parse(response)
@@ -30,7 +30,7 @@ class GitHubService
   def self.followers(user)
     response = conn.get do |req|
       req.url "/users/#{user.login}/followers"
-      req.params[:access_token] = user.oauth_token
+      req.params[:access_token] = user.oauth_token if user.oauth_token
     end
     parse(response)
   end

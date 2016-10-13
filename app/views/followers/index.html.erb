@@ -10,12 +10,12 @@
     <% @followers.each do |follower| %>
       <div class="row repository_row">
           <div class="col-md-3">
-            <h3><a href="<%= followers_profile_path(uid: follower.uid) %>"><image src="<%= follower.avatar_url %>"></image></a></h3>
+            <h3><a href="<%- followers_profile_path(uid: follower.uid) %>"><image src="<%= follower.avatar_url -%>"></image></a></h3>
           </div>
           <div class="col-md-9">
             <div class="row follower_row">
               <p>
-                <%= follower.name %>     <%= follower.login %>
+                <%= link_to follower.name, followers_profile_path(uid: follower.uid) %>     <%= follower.login %>
               </p>
             </div>
             <div class="row follower_row_2">

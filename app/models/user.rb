@@ -40,9 +40,8 @@ class User < ApplicationRecord
   end
 
   def followers
-    @followers ||= GitHubService.followers(self).map do |user|
+    GitHubService.followers(self).map do |user|
       GitHubUser.new(user)
     end
-    @followers
   end
 end

@@ -9,4 +9,8 @@ Rails.application.routes.draw do
   resources :dashboard, only: [:index]
   resources :followers, only: [:index]
   get '/followers/profile', to: 'followers#show'
+
+  namespace :followers do
+    resources :respositories, only: [:index]
+  end
 end

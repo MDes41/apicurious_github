@@ -31,4 +31,14 @@ RSpec.describe 'User logs in with git hub' do
     click_link "Sign Out"
     expect(page).to_not have_content("Signed in as MDes41")
   end
+
+  it 'can view their repos' do
+    visit "/"
+    expect(page.status_code).to eq(200)
+    click_link "Login With Git Hub"
+    expect(current_path).to eq("/dashboard")
+    click_on "Repositories"
+    expect(page).to have_content("1module_homework_flow_control")
+    expect(page).to have_content("WP_Repository_Port")
+  end
 end

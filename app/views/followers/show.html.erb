@@ -1,31 +1,28 @@
 <div class="row">
 
-  <%= render 'shared/profile' %>
+  <div class="col-md-3">
+    <div class="row profile_img">
+      <image src="<%= @git_hub_user.avatar_url %>"></image>
+    </div>
+
+    <div class="row">
+      <h1><%= @git_hub_user.name %></h1>
+    </div>
+
+    <div class="row login_hp">
+        <p><%= @git_hub_user.login %></p>
+    </div>
+
+    <div class="row mail_img">
+        <image src='assets/mail'></image><span><%= @git_hub_user.email %></span>
+    </div>
+
+  </div>
+
 
   <div class="col-md-9">
 
     <%= render 'shared/mini_nav' %>
-
-
-    <% @followers.each do |follower| %>
-      <div class="row repository_row">
-          <div class="col-md-3">
-            <h3><a href="<%= followers_profile_path %>"><image src="<%= follower.avatar_url %>"></image></a></h3>
-          </div>
-          <div class="col-md-9">
-            <div class="row follower_row">
-              <p>
-                <%= follower.name %>     <%= follower.login %>
-              </p>
-            </div>
-            <div class="row follower_row_2">
-              <p>
-                <%= follower.company %>     <%= follower.location %>
-              </p>
-            </div>
-          </div>
-      </div>
-    <% end %>
 
   </div>
 
